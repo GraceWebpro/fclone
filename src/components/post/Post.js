@@ -154,7 +154,7 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                 <h3 onClick={() => {
                     window.location.href=  `/${username}/${user?.uid}`
                 }} style={{cursor: 'pointer'}}>{username}</h3>
-                <i class="post__verified" />
+                <i className="post__verified" />
             </div>
 
             <h4 className="post__text">{caption}</h4>
@@ -168,7 +168,7 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
             <p>{noLikes} {noLikes === 1 ? "Like" : "Likes"}</p>
             </div>
 
-            <div class="hr" />
+            <div className="hr" />
 
             <div className="post__likeoptions">
                 <div className="like" onClick={likeHandle}>
@@ -177,7 +177,7 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                 </div>
                 <div className="comment">
                     <i className="comment2" />
-                    <h3 class="dope">Comment</h3>
+                    <h3 className="dope">Comment</h3>
                 </div>
                 <div className="share">
                     <i className="share2" />
@@ -199,14 +199,14 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
 
             {
                 comments.map((comment) => (
-                    <div className={`comments__show ${comment.username == postUser?.displayName && 'myself'}`}>
+                    <div className={`comments__show ${comment.username === postUser?.displayName && 'myself'}`}>
                         <Avatar
                             className="post__avatar2"
                             alt=""
                             src={comment.photoURL}
                         />
-                        <div class="container__comments">
-                            <p><span>{comment.username}</span><i class="post__verified"></i>&nbsp;{comment.text}</p>
+                        <div className="container__comments">
+                            <p><span>{comment.username}</span><i className="post__verified"></i>&nbsp;{comment.text}</p>
                         </div>
                     </div>
                 ))

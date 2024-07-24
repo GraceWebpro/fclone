@@ -4,7 +4,6 @@ import { useHistory } from 'react-router'
 import { auth, db } from '../config/firebase';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/face3.png'
-import Profile from '../../assets/profile.jpg'
 import { setDoc, doc, serverTimestamp } from '@firebase/firestore';
 
 
@@ -55,7 +54,7 @@ const Register = () => {
     }
 
   return (
-    <div classname='register'>
+    <div className='register'>
         <center>
         <img src={Logo} alt='Facebook Logo' className='header-logo' />
         <div className='register-container'>

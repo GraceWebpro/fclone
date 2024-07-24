@@ -40,7 +40,7 @@ const Login = () => {
     }
 
   return (
-    <div classname='login'>
+    <div className='login'>
         <center>
             <img src={Logo} alt='Facebook Logo' className='login-logo' />
             <div className='login-container'>

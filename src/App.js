@@ -28,11 +28,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path='/login'>
+          <Route path='/login'>
             <Login />
           </Route>
 
-          <Route exact path='/register'>
+          <Route path='/register'>
             <Register />
           </Route>
 
@@ -42,7 +42,7 @@ function App() {
             <Profile user={user} />
             </div>
           </Route>
-          <Route exact paqth='/'>
+          <Route exact path='/'>
             <HomeHeader user={user} selected />
             <div className='app__page'>
               <Sidebar user={user}  />

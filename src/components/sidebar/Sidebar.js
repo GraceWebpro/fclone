@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import SidebarRow from './SidebarRow'
 
 const Sidebar = ({user}) => {
-    const url = '/' + user.displayName + '/' + user.uid;
+    const url = '/' + user?.displayName + '/' + user?.uid;
 
   return (
     <div className='sidebar'>
-        <Link to={`/${user?.displayName}/${user?.uid}`}>
+        <Link to={url}>
             <SidebarRow avatar ImageLink={user?.photoURL} title={user?.displayName} />
         </Link>
         <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/7_gcmlwrelX.png" title="COVID-19 Information Centre" />
@@ -20,21 +20,21 @@ const Sidebar = ({user}) => {
         <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/Uy-TOlM5VXG.png" title="Memories" />
         <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/yA/r/KlDlsO3UxDM.png" title="Saved" />
         <SidebarRow dropdown ImageLink="null" title="See more" />
-        <div class="hr" />
-        <div class="policies">
+        <div className="hr" />
+        <div className="policies">
             <p>Privacy</p>
-            <p class="dot">·</p>
+            <p className="dot">·</p>
             <p>Terms</p>
-            <p class="dot">·</p>
+            <p className="dot">·</p>
             <p>Advertising</p>
-            <p class="dot">·</p>
+            <p className="dot">·</p>
             <p>Ad choices</p>
-            <i class="ads" />
-            <p class="dot">·</p>
+            <i className="ads" />
+            <p className="dot">·</p>
             <p>Cookies</p>
-            <p class="dot">·</p>
+            <p className="dot">·</p>
             <p>More</p>
-            <p class="dot">·</p>
+            <p className="dot">·</p>
             <p>Facebook © 2020</p>
         </div>
     </div>

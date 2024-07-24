@@ -113,7 +113,7 @@ function Profile({ user }) {
                                 handleClose();
                                 setProgress(0);
 
-                                window.location.href = `/${user.displayName}/${user.uid}`
+                                window.location.href = `/${user?.displayName}/${user?.uid}`
                             })
                         })
                     })
@@ -197,8 +197,8 @@ function Profile({ user }) {
                 scroll={scroll}
                 className="dialog2"
             >
-                <div class="makeStyles-paper-1">
-                    <div class="profileHead2">
+                <div className="makeStyles-paper-1">
+                    <div className="profileHead2">
                         <p>Are you sure you want to change your profile picture ? Changes cannot be reverted </p>
                         <progress value={progress} max="100" style={{ display: 'none' }} className="progress" />
                         <div className="buttons">

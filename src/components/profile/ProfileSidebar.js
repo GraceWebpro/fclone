@@ -9,8 +9,8 @@ function ProfileSidebar({ username }) {
 
     useEffect(() => {
         db.collection('posts').onSnapshot((snapshot) => {
-            snapshot.docs.map((doc) => {
-                if (doc.data().username == username) {
+            snapshot.docs.forEach((doc) => {
+                if (doc.data().username === username) {
                     if (nposts.length !== 9) {
                         if (!nposts.includes(doc.data().imageUrl)) {
                             nposts.push(doc.data().imageUrl)
@@ -24,8 +24,8 @@ function ProfileSidebar({ username }) {
     useEffect(() => {
         const userRef = collection(db, 'users')
         onSnapshot(userRef, (snapshot) => {
-            snapshot.docs.map((doc) => {
-                if (doc.data().displayName == username) {
+            snapshot.docs.forEach((doc) => {
+                if (doc.data().displayName === username) {
                     setCUserdata(doc.data())
                 }
             })
@@ -40,7 +40,7 @@ function ProfileSidebar({ username }) {
                     {
                         cuserdata?.birthday ? (
                             <div className="introblock">
-                                <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/IqqJ0EjDF9B.png" className="birthday" />
+                                <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/IqqJ0EjDF9B.png" className="birthday" alt='' />
                                 <h1>{`${cuserdata?.birthday[0]} - ${cuserdata?.birthday[1]} - ${cuserdata?.birthday[2]}`}</h1>
                             </div>
                         ) : (
@@ -65,25 +65,26 @@ function ProfileSidebar({ username }) {
                     }
                 </div>
             </div>
-            <div class="hr profile" />
-            <div class="policies profile">
+            <div className="hr profile" />
+            <div className="policies profile">
                 <p>Privacy</p>
-                <p class="dot">·</p>
+                <p className="dot">·</p>
                 <p>Terms</p>
-                <p class="dot">·</p>
+                <p className="dot">·</p>
                 <p>Advertising</p>
-                <p class="dot">·</p>
+                <p className="dot">·</p>
                 <p>Ad choices</p>
-                <i class="ads" />
-                <p class="dot">·</p>
+                <i className="ads" />
+                <p className="dot">·</p>
                 <p>Cookies</p>
-                <p class="dot">·</p>
+                <p className="dot">·</p>
                 <p>More</p>
-                <p class="dot">·</p>
+                <p className="dot">·</p>
                 <p>Facebook © 2020</p>
             </div>
         </div >
     )
 }
+
 
 export default ProfileSidebar

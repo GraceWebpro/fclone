@@ -122,61 +122,61 @@ function ImageUpload() {
                 onClose={handleClose}
                 scroll={scroll}
             >
-                <div class="makeStyles-paper-1">
-                    <div class="modalInit">
+                <div className="makeStyles-paper-1">
+                    <div className="modalInit">
                         <h1>Create Post</h1>
-                        <CloseIcon class="closeModalIcon" onClick={handleClose} />
+                        <CloseIcon className="closeModalIcon" onClick={handleClose} />
                     </div>
-                    <div class="hr2" />
-                    <div class="profileHead">
+                    <div className="hr2" />
+                    <div className="profileHead">
                         <img src={user?.photoURL} className="Avatar" alt='' />
                         <h1>{user?.displayName}</h1>
                     </div>
-                    <div class="inputForUpload">
+                    <div className="inputForUpload">
                         <input onChange={handleChange} type="file" accept="image/*" className='four' />
                         <textarea value={caption} onChange={(e) => setCaption(e.target.value)} rows="4" placeholder={`What's on your mind, ${user?.displayName}?`} />
                     </div>
-                    <div class={`previewImage ${!image && "vanish"}`}>
+                    <div className={`previewImage ${!image && "vanish"}`}>
                         <img src={imageURL} className="previewImaage" alt='' />
                     </div>
-                    <img alt="" class="colorAlpha" src="https://facebook.com/images/composer/SATP_Aa_square-2x.png"></img>
+                    <img alt="" className="colorAlpha" src="https://facebook.com/images/composer/SATP_Aa_square-2x.png"></img>
 
                     <progress value={progress} className="hidden" max="100" />
 
                     <div className="publishOptions">
-                        <div class="left">
+                        <div className="left">
                             <h1>Add to your post</h1>
                         </div>
-                        <div class="right">
-                            <i class="Icon roomIcon" onClick={uploadFileWithClick} />
-                            <i class="Icon photoIcon" onClick={uploadFileWithClick} />
-                            <i class="Icon friendsIcon" />
-                            <i class="Icon feelingIcon" />
-                            <i class="Icon tagIcon" />
-                            <i class="Icon moreIcon" />
+                        <div className="right">
+                            <i className="Icon roomIcon" onClick={uploadFileWithClick} />
+                            <i className="Icon photoIcon" onClick={uploadFileWithClick} />
+                            <i className="Icon friendsIcon" />
+                            <i className="Icon feelingIcon" />
+                            <i className="Icon tagIcon" />
+                            <i className="Icon moreIcon" />
                         </div>
                     </div>
-                    <button onClick={handleUpload} type="submit" class={`postButton ${caption.length < 1 && "disabled"} ${imageURL !== "" && "visible"}`}>Post</button>
+                    <button onClick={handleUpload} type="submit" className={`postButton ${caption.length < 1 && "disabled"} ${imageURL !== "" && "visible"}`}>Post</button>
                 </div>
             </Dialog>
 
-            <div class="imageupload__container">
-                <div class="postArea">
-                    <img src={user?.photoURL} class="Avatar" alt='' />
+            <div className="imageupload__container">
+                <div className="postArea">
+                    <img src={user?.photoURL} className="Avatar" alt='' />
                     <input value={caption} onChange={(e) => setCaption(e.target.value)} onClick={handleClickOpen('body')} placeholder={`What's on your mind, ${user?.displayName}?`} />
                 </div>
-                <div class="hr" />
-                <div class="options">
-                    <div class="liveVideo" onClick={handleClickOpen('body')}>
-                        <i class="liveVideoIcon" />
+                <div className="hr" />
+                <div className="options">
+                    <div className="liveVideo" onClick={handleClickOpen('body')}>
+                        <i className="liveVideoIcon" />
                         <h2>Live video</h2>
                     </div>
-                    <div class="photo" onClick={handleClickOpen('body')}>
-                        <i class="photoIcon" />
+                    <div className="photo" onClick={handleClickOpen('body')}>
+                        <i className="photoIcon" />
                         <h2>Photo/Video</h2>
                     </div>
-                    <div class="feeling" onClick={handleClickOpen('body')}>
-                        <i class="feelingIcon" />
+                    <div className="feeling" onClick={handleClickOpen('body')}>
+                        <i className="feelingIcon" />
                         <h2>Feeling/Activity</h2>
                     </div>
                 </div>
